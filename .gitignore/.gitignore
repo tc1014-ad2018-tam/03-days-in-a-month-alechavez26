@@ -1,0 +1,58 @@
+/*
+ *
+ * Alejandra Chávez Cruz
+ * 30/ago/2018
+ * A01411970
+*/
+
+
+#include <stdio.h>
+
+int main() {
+    // Variable declaration
+    signed int year;
+    int month;
+
+    //The user have to introduce the year and month
+    printf("Hi, I will help you. So what year is it?");
+    scanf ("%i", &year);
+    printf("What month is it? (1-12)");
+    scanf("%i", &month);
+
+    switch(month) {
+        //Months like january, march, may, july, august, october and december have 31 days
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            printf("This month has 31 days\n");
+            break;
+        // Months like april, june, september and november only have 30 days
+
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            printf("This month has 30 days\n");
+            break;
+
+            // In this part  will know if february has 28 or  29 days.
+        case 2:
+            if (year %4 == 0) {
+                printf ("This month has 29 days, because is a leap year\n");
+
+            } else {
+                printf("This month has 28 days\n");
+            } break;
+
+        default: printf("Sorry that is not a month, enter another value");
+
+
+
+
+    }
+    return 0;
+}
